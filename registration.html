@@ -201,61 +201,31 @@
             </div>
         </div>
     </section>
+    
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbzjIhNeCROukOusWaGU2iHfwj9MLsjo_ZCs_mZStnEnQfEDe4FEz2iyPysNrNmebNtu/exec';
-        const form = document.getElementById('registrationForm');
-        const btn = document.getElementById('submitBtn');
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbxfFAOBjN0CWs8N7oRlWfuBcuI7eCqbL2yojlMjlAQTJf6lINAvwa73oXLQ-NqFMk0/exec'; 
+        const form = document.getElementById('irisForm');
+        const btn = form.querySelector('button');
 
         form.addEventListener('submit', e => {
             e.preventDefault();
             btn.disabled = true;
-            btn.innerHTML = "SUBMITTING...";
+            btn.innerHTML = "Submitting...";
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-                .then(response => {
-                    btn.innerHTML = "SUCCESS!";
-                    alert("Registration Submitted! Check the Leader's email for confirmation.");
-                    form.reset();
-                })
-                .catch(error => {
-                    console.error('Error!', error.message);
-                    btn.disabled = false;
-                    btn.innerHTML = "TRY AGAIN";
-                });
+            .then(response => {
+                alert("Success! You are registered for IRIS.");
+                btn.innerHTML = "Registered!";
+                form.reset();
+            })
+            .catch(error => {
+                btn.disabled = false;
+                btn.innerHTML = "Try Again";
+                console.error('Error!', error.message);
+            });
         });
     </script>
-    <script>
-        function togglePayment(method) {
-            const qrBox = document.getElementById('qr-payment');
-            const bankBox = document.getElementById('bank-payment');
-            const boxes = document.querySelectorAll('.method-box');
 
-            // Toggle Visibility
-            if (method === 'qr') {
-                qrBox.style.display = 'block';
-                bankBox.style.display = 'none';
-                boxes[0].classList.add('active');
-                boxes[1].classList.remove('active');
-            } else {
-                qrBox.style.display = 'none';
-                bankBox.style.display = 'block';
-                boxes[0].classList.remove('active');
-                boxes[1].classList.add('active');
-            }
-        }
-    </script>
-
-    <script>
-        const fileInput = document.getElementById('receiptFile');
-        const fileNameDisplay = document.getElementById('fileName');
-
-        fileInput.addEventListener('change', function() {
-            if (this.files && this.files.length > 0) {
-                fileNameDisplay.innerText = "Selected: " + this.files[0].name;
-                fileNameDisplay.style.color = "var(--primary-red)";
-            }
-        });
-    </script>
     <script>
         const menuBtn = document.getElementById('mobile-menu');
         const navList = document.getElementById('nav-list');
