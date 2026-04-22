@@ -66,7 +66,7 @@
                 <div class="payment-glass-card" data-aos="fade-left">
                     <div class="card-status">Critical Information</div>
                     <h3>Payment & Fees</h3>
-                    <div class="amount-tag">RM 200</div>
+                    <div class="amount-tag">RM 300</div>
                     <p class="per-team">PER TEAM </p>
 
                     <div class="payment-rules">
@@ -89,90 +89,105 @@
     </section>
 
     <section class="section form-section bg-light">
-        <div class="container flex-center">
-            <div class="form-card" data-aos="zoom-in">
+        <div class="container">
+            <div class="form-card-wide" data-aos="zoom-in">
                 <div class="form-header">
                     <h2>Team Registration Form</h2>
+                    <p>Ensure all 3 members' details are filled correctly as per the OGCE Handbook.</p>
                     <div class="underline-center"></div>
-                    <p>Please fill in all sections accurately.</p>
                 </div>
-                
+
                 <form id="registrationForm" class="iris-form">
-                    <div class="form-group">
-                        <label>University Name</label>
-                        <input type="text" name="university" placeholder="e.g. Universiti Teknologi PETRONAS" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Team Name</label>
-                        <input type="text" name="teamName" placeholder="Enter your team name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Leader's Full Name</label>
-                        <input type="text" name="leaderName" placeholder="As per Identification Card" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Leader's Phone Number</label>
-                        <input type="text" name="laderPhoneNumber" placeholder="012-xxx xxxx" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Team Member 1 Full Name</label>
-                        <input type="text" name="team1Name" placeholder="As per Identification Card" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Team Member 2 Full Name</label>
-                        <input type="text" name="team2Name" placeholder="As per Identification Card" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Contact Email</label>
-                        <input type="email" name="email" placeholder="@gmail.com" required>
-                    </div>
-                    
-                    <div class="form-footer">
-                        <button type="submit" id="submitBtn" class="btn-submit-lively">CONFIRM & SUBMIT</button>
+                    <div class="form-row-top">
+                        <div class="form-group">
+                            <label>University Name</label>
+                            <input type="text" name="university" placeholder="e.g. Universiti Teknologi PETRONAS" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Team Name</label>
+                            <input type="text" name="teamName" placeholder="Enter your team name" required>
+                        </div>
                     </div>
 
-                    <div class="payment-selection" data-aos="fade-up">
-                        <label>Registration Fee: 200 MYR</label>
-                        <p class="payment-note">Payment must be completed during registration to secure your slot. </p>
+                    <div class="form-grid-split">
+                        <div class="form-column">
+                            <h3 class="column-title">Team Leader</h3>
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" name="leaderName" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Course of Study</label>
+                                <input type="text" name="leaderCourse" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" name="leaderPhone" placeholder="e.g. 60123456789" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" name="leaderEmail" required>
+                            </div>
+                        </div>
+
+                        <div class="form-column">
+                            <h3 class="column-title">Member 1</h3>
+                            <div class="form-group">
+                                <input type="text" name="m1Name" placeholder="Full Name" required>
+                            </div>
+                            <div class="form-row-small">
+                                <input type="text" name="m1Course" placeholder="Course" required>
+                                <input type="tel" name="m1Phone" placeholder="Phone" required>
+                            </div>
+                            <input type="email" name="m1Email" placeholder="Email" style="margin-top:10px;" required>
+
+                            <h3 class="column-title" style="margin-top: 30px;">Member 2</h3>
+                            <div class="form-group">
+                                <input type="text" name="m2Name" placeholder="Full Name" required>
+                            </div>
+                            <div class="form-row-small">
+                                <input type="text" name="m2Course" placeholder="Course" required>
+                                <input type="tel" name="m2Phone" placeholder="Phone" required>
+                            </div>
+                            <input type="email" name="m2Email" placeholder="Email" style="margin-top:10px;" required>
+                        </div>
+                    </div>
+
+                    <div class="payment-upload-area">
+                        <h3 class="column-title">Payment Verification</h3>
                         
-                        <div class="payment-methods">
-                            <div class="method-box active" onclick="togglePayment('qr')">
-                                <span class="icon">📱</span> DuitNow QR
+                        <div class="bank-transfer-details">
+                            <div class="bank-card">
+                                <p><strong>Bank:</strong> Maybank</p>
+                                <p><strong>Account Number:</strong> <span class="account-num">558118553297</span></p>
+                                <p><strong>Account Name:</strong> IADC-UTP-SC</p>
                             </div>
-                            <div class="method-box" onclick="togglePayment('bank')">
-                                <span class="icon">🏦</span> Bank Transfer
-                            </div>
-                        </div>
-
-                        <div id="qr-payment" class="payment-details-box">
-                            <p>Scan to pay via DuitNow</p>
-                            <img src="YOUR-QR-CODE.png" alt="DuitNow QR Code" class="qr-image">
-                            <p class="bank-name-text">IADC-UTP-SC</p>
-                        </div>
-
-                        <div id="bank-payment" class="payment-details-box" style="display:none;">
-                            <div class="bank-info">
-                                <p><strong>Bank:</strong> CIMB Bank</p>
-                                <p><strong>Account:</strong> 800XXXXXXXX</p>
-                                <p><strong>Name:</strong> IADC-UTP-SC</p>
-                            </div>
-                        </div>
-
-                        <div class="form-group" style="margin-top: 20px;">
-                            <label>Upload Payment Receipt</label>
-                            <p class="small-text">Accepted formats: JPG, PNG, or PDF (Max 5MB).</p>
                             
-                            <div class="file-upload-wrapper">
-                                <input type="file" name="receiptFile" id="receiptFile" accept="image/*, .pdf" required>
-                                <div class="file-custom-design">
-                                    <span class="upload-icon">📁</span>
-                                    <span id="fileName">Click to browse or drag photo here</span>
-                                </div>
+                            <div class="reference-instruction">
+                                <p>⚠️ <strong>Payment Reference:</strong></p>
+                                <p>Please use your <strong>TEAM NAME IRIS 2026</strong> as the recipient reference to avoid registration delays.</p>
                             </div>
-                            <p class="warning-text">Reminder: Delays in payment will nullify your team's participation.</p>
                         </div>
+
+                        <div class="upload-field-group">
+                            <label>Upload Transaction Receipt (RM 300)</label>
+                            <div class="file-input-wrapper">
+                                <input type="file" id="receiptFile" name="receiptFile" accept="image/*, .pdf" required>
+                            </div>
+                            <p class="warning-text">Reminder: Delays in payment will nullify participation.</p>
+                        </div>
+                    </div>
+                    <div class="form-footer">
+                        <button type="submit" id="submitBtn" class="btn-submit-lively">
+                            CONFIRM & SUBMIT REGISTRATION
+                        </button>
+                        <p class="footer-note">By clicking submit, you agree to the IRIS 2026 Rules & Regulations.</p>
                     </div>
                 </form>
+            </div>
+        </div>
+        
+    </section>
                 
                 <div id="successMessage" class="success-msg">
                     Registration Successful! You will be added to the IRIS 2026 WhatsApp group.
@@ -181,27 +196,25 @@
         </div>
     </section>
     <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxHI2R8z0_B-yvhot5NxzYMsMk3obREjl6bGiJQib68kTdV1df9StKUCdXtupV69z6W/exec';
+        const scriptURL = 'https://script.google.com/macros/s/AKfycbzjIhNeCROukOusWaGU2iHfwj9MLsjo_ZCs_mZStnEnQfEDe4FEz2iyPysNrNmebNtu/exec';
         const form = document.getElementById('registrationForm');
         const btn = document.getElementById('submitBtn');
-        const msg = document.getElementById('successMessage');
 
         form.addEventListener('submit', e => {
             e.preventDefault();
             btn.disabled = true;
-            btn.innerHTML = "Submitting...";
+            btn.innerHTML = "SUBMITTING...";
 
             fetch(scriptURL, { method: 'POST', body: new FormData(form)})
                 .then(response => {
-                    btn.disabled = false;
-                    btn.innerHTML = "Submit Registration";
-                    msg.style.display = "block";
+                    btn.innerHTML = "SUCCESS!";
+                    alert("Registration Submitted! Check the Leader's email for confirmation.");
                     form.reset();
                 })
                 .catch(error => {
                     console.error('Error!', error.message);
                     btn.disabled = false;
-                    btn.innerHTML = "Try Again";
+                    btn.innerHTML = "TRY AGAIN";
                 });
         });
     </script>
