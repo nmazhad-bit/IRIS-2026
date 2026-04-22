@@ -9,16 +9,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
+
 <body>
 
     <nav>
         <div class="logo-container">
-            <a href="index.html" class="logo-link">
-                <img src="FINAL LOGO.png" alt="IRIS Logo" class="nav-logo">
-            </a>
+            <img src="FINAL LOGO.png" alt="Logo" class="nav-logo">
         </div>
-        <ul class="nav-links">
-            <li><a href="#home">HOME</a></li>
+        
+        <div class="menu-icon" id="menuIcon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">HOME</a></li>
             <li><a href="#about">ABOUT</a></li>
             <li><a href="registration.html">REGISTER</a></li>
             <li><a href="competitions.html">COMPETITION</a></li>
@@ -121,6 +127,14 @@
                 document.querySelector(".countdown-container").innerHTML = "<h3>Registration Closed</h3>";
             }
         }, 1000);
+    </script>
+    <script>
+        const menuBtn = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        menuBtn.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
     </script>
 </body>
 </html>
