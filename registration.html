@@ -93,138 +93,21 @@
             </div>
         </div>
     </section>
-
-    <section class="section form-section bg-light">
-        <div class="container">
-            <div class="form-card-wide" data-aos="zoom-in">
-                <div class="form-header">
-                    <h2>Team Registration Form</h2>
-                    <p>Ensure all 3 members' details are filled correctly.</p>
-                    <div class="underline-center"></div>
-                </div>
-
-                <form id="registrationForm" class="iris-form">
-                    <div class="form-row-top">
-                        <div class="form-group">
-                            <label>University Name</label>
-                            <input type="text" name="university" placeholder="e.g. Universiti Teknologi PETRONAS" required>
-                        </div>
-                        <div class="form-group">
-                            <label>Team Name</label>
-                            <input type="text" name="teamName" placeholder="Enter your team name" required>
-                        </div>
-                    </div>
-
-                    <div class="form-grid-split">
-                        <div class="form-column">
-                            <h3 class="column-title">Team Leader</h3>
-                            <div class="form-group">
-                                <label>Full Name</label>
-                                <input type="text" name="leaderName" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Course of Study</label>
-                                <input type="text" name="leaderCourse" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Phone Number</label>
-                                <input type="tel" name="leaderPhone" placeholder="e.g. 60123456789" required>
-                            </div>
-                            <div class="form-group">
-                                <label>Email Address</label>
-                                <input type="email" name="leaderEmail" required>
-                            </div>
-                        </div>
-
-                        <div class="form-column">
-                            <h3 class="column-title">Member 1</h3>
-                            <div class="form-group">
-                                <input type="text" name="m1Name" placeholder="Full Name" required>
-                            </div>
-                            <div class="form-row-small">
-                                <input type="text" name="m1Course" placeholder="Course" required>
-                                <input type="tel" name="m1Phone" placeholder="Phone" required>
-                            </div>
-                            <input type="email" name="m1Email" placeholder="Email" style="margin-top:10px;" required>
-
-                            <h3 class="column-title" style="margin-top: 30px;">Member 2</h3>
-                            <div class="form-group">
-                                <input type="text" name="m2Name" placeholder="Full Name" required>
-                            </div>
-                            <div class="form-row-small">
-                                <input type="text" name="m2Course" placeholder="Course" required>
-                                <input type="tel" name="m2Phone" placeholder="Phone" required>
-                            </div>
-                            <input type="email" name="m2Email" placeholder="Email" style="margin-top:10px;" required>
-                        </div>
-                    </div>
-
-                    <div class="payment-upload-area">
-                        <h3 class="column-title">Payment Verification</h3>
-                        
-                        <div class="bank-transfer-details">
-                            <div class="bank-card">
-                                <p><strong>Bank:</strong> Maybank</p>
-                                <p><strong>Account Number:</strong> <span class="account-num">558118553297</span></p>
-                                <p><strong>Account Name:</strong> IADC-UTP-SC</p>
-                            </div>
-                            
-                            <div class="reference-instruction">
-                                <p>⚠️ <strong>Payment Reference:</strong></p>
-                                <p>Please use your <strong>TEAM NAME IRIS 2026</strong> as the recipient reference to avoid registration delays.</p>
-                            </div>
-                        </div>
-
-                        <div class="upload-field-group">
-                            <label>Upload Transaction Receipt (RM 300)</label>
-                            <div class="file-input-wrapper">
-                                <input type="file" id="receiptFile" name="receiptFile" accept="image/*, .pdf" required>
-                            </div>
-                            <p class="warning-text">Reminder: Delays in payment will nullify participation.</p>
-                        </div>
-                    </div>
-                    <div class="form-footer">
-                        <button type="submit" id="submitBtn" class="btn-submit-lively">
-                            CONFIRM & SUBMIT REGISTRATION
-                        </button>
-                        <p class="footer-note">By clicking submit, you agree to the IRIS 2026 Rules & Regulations.</p>
-                    </div>
-                </form>
-            </div>
-        </div>
-        
-    </section>
-                
-                <div id="successMessage" class="success-msg">
-                    Registration Successful! You will be added to the IRIS 2026 WhatsApp group.
-                </div>
-            </div>
-        </div>
-    </section>
     
-    <script>
-        const scriptURL = 'https://script.google.com/macros/s/AKfycbxfFAOBjN0CWs8N7oRlWfuBcuI7eCqbL2yojlMjlAQTJf6lINAvwa73oXLQ-NqFMk0/exec'; 
-        const form = document.getElementById('irisForm');
-        const btn = form.querySelector('button');
-
-        form.addEventListener('submit', e => {
-            e.preventDefault();
-            btn.disabled = true;
-            btn.innerHTML = "Submitting...";
-
-            fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-            .then(response => {
-                alert("Success! You are registered for IRIS.");
-                btn.innerHTML = "Registered!";
-                form.reset();
-            })
-            .catch(error => {
-                btn.disabled = false;
-                btn.innerHTML = "Try Again";
-                console.error('Error!', error.message);
-            });
-        });
-    </script>
+    <section class="registration-cta">
+        <div class="container">
+            <div class="cta-card">
+                <h2>Ready to Compete?</h2>
+                <p>Registration for IRIS 2026 is strictly first-come, first-served. Please ensure you have your <strong>RM 300 payment receipt</strong> ready before clicking the link below.</p>
+                
+                <a href="https://forms.gle/scWWZGuiCvgcAcBK6" class="btn-register-now" target="_blank">
+                    GO TO OFFICIAL REGISTRATION FORM
+                </a>
+                
+                <p class="note">*You will be redirected to Google Forms to securely upload your team details and proof of payment.</p>
+            </div>
+        </div>
+    </section>
 
     <script>
         const menuBtn = document.getElementById('mobile-menu');

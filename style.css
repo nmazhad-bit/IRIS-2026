@@ -2139,3 +2139,38 @@ nav {
         font-size: 0.9rem !important;
         padding: 8px 20px !important;
     }
+}
+.registration-cta {
+    padding: 100px 5%;
+    text-align: center;
+    background: #fdfdfd;
+}
+
+.cta-card {
+    background: white;
+    padding: 60px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    border-top: 8px solid var(--primary-red);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.btn-register-now {
+    display: inline-block;
+    background: var(--primary-red);
+    color: white;
+    padding: 20px 40px;
+    text-decoration: none;
+    font-weight: 800;
+    border-radius: 50px;
+    margin-top: 30px;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 10px 20px rgba(179, 0, 0, 0.3);
+}
+
+.btn-register-now:hover {
+    background: #800000;
+    transform: translateY(-5px);
+}
