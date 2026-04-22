@@ -10,15 +10,21 @@
 <body>
 
     <nav>
-        <div class="logo-container">
-            <a href="index.html" class="logo-link">
-                <img src="FINAL LOGO.png" alt="IRIS Logo" class="nav-logo">
-            </a>
+        <div class="logo">
+            <img src="FINAL LOGO.png" alt="IRIS Logo">
         </div>
-        <ul class="nav-links">
+
+        <div class="menu-icon" id="menuIcon">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        </div>
+
+        <ul class="nav-links" id="navLinks">
             <li><a href="index.html">HOME</a></li>
-            <li><a href="registration.html" class="active">REGISTER</a></li>
+            <li><a href="index.html#about">ABOUT</a></li>
             <li><a href="competitions.html">COMPETITION</a></li>
+            <li><a href="registration.html">REGISTER</a></li>
             <li><a href="contact.html">CONTACT</a></li>
         </ul>
     </nav>
@@ -256,6 +262,21 @@
 
         menuBtn.addEventListener('click', () => {
             navList.classList.toggle('active');
+        });
+    </script>
+    <script>
+        const menuIcon = document.getElementById('menuIcon'); // Make sure your HTML has id="menuIcon"
+        const navLinks = document.getElementById('navLinks'); // Make sure your HTML has id="navLinks"
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked (better UX)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
         });
     </script>
 </body>

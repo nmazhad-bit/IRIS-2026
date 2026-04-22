@@ -136,5 +136,20 @@
             navList.classList.toggle('active');
         });
     </script>
+    <script>
+        const menuIcon = document.getElementById('menuIcon'); // Make sure your HTML has id="menuIcon"
+        const navLinks = document.getElementById('navLinks'); // Make sure your HTML has id="navLinks"
+
+        menuIcon.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked (better UX)
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+    </script>
 </body>
 </html>
