@@ -1498,3 +1498,52 @@ nav {
         grid-template-columns: 1fr;
     }
 }
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none; /* Hide them for now, or use a vertical stack */
+        flex-direction: column;
+        background: white;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    
+    /* Quick fix: Make them stack and show */
+    nav { padding: 10px 5%; }
+    .nav-links.active { display: flex; } 
+}
+/* Stack the About Grid and Competition Cards */
+@media (max-width: 768px) {
+    .about-grid, .contact-wrapper, .form-grid-split {
+        grid-template-columns: 1fr !important; /* Forces 1 column instead of 2 */
+        text-align: center;
+        gap: 30px;
+    }
+
+    .about-img-col {
+        order: -1; /* Puts the photo ABOVE the text on mobile */
+    }
+
+    .section-title {
+        font-size: 1.8rem; /* Shrink titles so they don't wrap weirdly */
+    }
+}
+@media (max-width: 600px) {
+    .form-card-wide {
+        padding: 20px; /* Reduce padding so it doesn't look squeezed */
+        margin: 10px;
+    }
+
+    .form-row-top, .form-row-small {
+        grid-template-columns: 1fr; /* Everything becomes a single vertical list */
+    }
+
+    .btn-submit-lively {
+        width: 100%; /* Make the button easy to tap with a thumb */
+        padding: 15px 20px;
+    }
+}
