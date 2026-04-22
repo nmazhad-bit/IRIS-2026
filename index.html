@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IRIS 2026 | IQ Rig Showdown</title>
+    
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;800&display=swap" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+
+    <nav>
+        <div class="logo-container">
+            <a href="index.html" class="logo-link">
+                <img src="FINAL LOGO.png" alt="IRIS Logo" class="nav-logo">
+            </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="registration.html">REGISTER</a></li>
+            <li><a href="competitions.html">COMPETITION</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
+
+    <header id="home" class="hero">
+        <div class="hero-content" data-aos="fade-right">
+            <div class="hero-date-badge">
+                <span class="calendar-icon">📅</span> 05 - 07 JUNE 2026
+            </div>
+            
+            <h4>ANNUAL TECH CHALLENGE</h4>
+            <h1><span class="white-text">IQ RIG</span> <br><span class="accent-text">SHOWDOWN</span></h1>
+            
+            <p>A premier platform for students to showcase engineering precision and technical problem-solving. Join us at <strong>Universiti Teknologi PETRONAS.</strong></p>
+            
+            <div class="hero-btns">
+                <a href="#registration-countdown" class="btn btn-gold">REGISTER NOW</a>
+                <a href="#" class="btn btn-outline">Competition Booklet</a>
+            </div>
+        </div>
+    </header>
+
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text" data-aos="fade-right">
+                    <h4 class="sub-title">Discovery</h4>
+                    <h2>About <span class="highlight">IRIS 2026</span></h2>
+                    <div class="underline-left"></div>
+                    
+                    <p>International Rig IQ Showdown (IRIS) 2026 is a competition designed to show expertise in drilling and well completion specialists. Participants will engage in a series of rigorous tests covering advanced techniques, innovations, and operational challenges, bridging the gap between academic theory and real-world practice.</p>
+                    
+                    <p>Students collaborate in teams to solve challenging problems, enhancing critical thinking, communication, and technical skills. Expert judges provide feedback, guiding participants to refine their understanding and approach.</p>
+                    
+                    <p>Beyond assessments, the event fosters a collaborative environment where students can network with industry professionals, ask questions, and explore career opportunities while gaining insights into emerging trends and challenges shaping the drilling and completions sector.</p>
+
+                    <div class="event-info-box">
+                        <p><strong>Organizer:</strong> IADC-UTP-SC</p>
+                        <p><strong>Date:</strong> 5th June – 7th June 2026</p>
+                        <p><strong>Time:</strong> 09:00 am – 05:00 pm</p>
+                    </div>
+                </div>
+
+                <div class="about-image" data-aos="fade-left">
+                    <div class="image-border">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022" alt="Drilling Rig Innovation">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="registration-countdown" class="section countdown-section">
+        <div class="section-title" data-aos="fade-up">
+            <h2>Registration Ends In</h2>
+            <div class="underline"></div>
+        </div>
+
+        <div class="countdown-container" data-aos="zoom-in">
+            <div class="time-box">
+                <span id="days">00</span>
+                <p>Days</p>
+            </div>
+            <div class="time-box">
+                <span id="hours">00</span>
+                <p>Hours</p>
+            </div>
+            <div class="time-box">
+                <span id="minutes">00</span>
+                <p>Minutes</p>
+            </div>
+            <div class="time-box">
+                <span id="seconds">00</span>
+                <p>Seconds</p>
+            </div>
+        </div>
+
+        <div class="countdown-cta" data-aos="fade-up">
+            <a href="competitions.html" class="btn btn-gold">Explore Competitions</a>
+        </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        const countDownDate = new Date("Oct 30, 2026 23:59:59").getTime();
+        const x = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = countDownDate - now;
+            document.getElementById("days").innerHTML = Math.floor(distance / (1000 * 60 * 60 * 24));
+            document.getElementById("hours").innerHTML = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            document.getElementById("minutes").innerHTML = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            document.getElementById("seconds").innerHTML = Math.floor((distance % (1000 * 60)) / 1000);
+            if (distance < 0) {
+                clearInterval(x);
+                document.querySelector(".countdown-container").innerHTML = "<h3>Registration Closed</h3>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
